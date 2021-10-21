@@ -8,5 +8,5 @@ class Comments(models.Model):
     video = models.CharField(max_length=280, null = True)
 
 class Replies(models.Model):
-    comment = models.ForeignKey(Comments, on_delete=models.CASCADE, default = '')
+    comment_id = models.ForeignKey('commentsection.Comments', on_delete=models.CASCADE, default = '')
     message = models.CharField(max_length=280, blank = True, null = True, default = '')
